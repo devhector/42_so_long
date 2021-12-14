@@ -6,7 +6,7 @@
 /*   By: hectfern <hectfern@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 15:08:11 by coder             #+#    #+#             */
-/*   Updated: 2021/12/14 18:37:16 by hectfern         ###   ########.fr       */
+/*   Updated: 2021/12/14 18:44:25 by hectfern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,21 @@ typedef struct
 	void *window;
 } t_var;
 
+/*
+mlx_destroy_image(data->mlx->mlx_ptr, data->img.img_ptr);
+    mlx_clear_window(data->mlx->mlx_ptr, data->mlx->win);
+    mlx_destroy_window(data->mlx->mlx_ptr, data->mlx->win);
+    mlx_destroy_display(data->mlx->mlx_ptr);
+    free(data->mlx->mlx_ptr);
+    free(data->mlx);
+    exit(0);
+*/
+
 int key_hook(int keycode, t_var *var)
 {
 	if(keycode == 113)
 	{
+		mlx_clear_window(var->mlx, var->window);
 		mlx_destroy_window(var->mlx, var->window);
 		mlx_destroy_display(var->mlx);
 	}
