@@ -43,7 +43,7 @@ void draw_line(void *mlx, void *win, int beginX, int beginY, int endX, int endY,
 	}
 }
 
-typedef struct 
+typedef struct
 {
 	void *mlx;
 	void *window;

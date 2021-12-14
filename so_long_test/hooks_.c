@@ -39,7 +39,7 @@ int				key_press(int keycode, t_param *param)
 {
 	static int a = 0;
 
-	if (keycode == KEY_W)//Action when W key pressed
+	if (keycode == KEY_W) //Action when W key pressed
 		param->x++;
 	else if (keycode == KEY_S) //Action when S key pressed
 		param->x--;
