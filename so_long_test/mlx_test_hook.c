@@ -6,7 +6,7 @@
 /*   By: hectfern <hectfern@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 15:08:11 by coder             #+#    #+#             */
-/*   Updated: 2021/12/14 18:44:25 by hectfern         ###   ########.fr       */
+/*   Updated: 2021/12/14 18:45:23 by hectfern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,6 @@ int	main(void)
 	mlx_key_hook(var.window, key_hook, &var);
 	mlx_loop(var.mlx);
 	// mlx_destroy_display(var.mlx);
-	free(var.mlx);
+	//free(var.mlx);
 	return (0);
 }
