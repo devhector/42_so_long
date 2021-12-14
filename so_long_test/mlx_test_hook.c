@@ -6,7 +6,7 @@
 /*   By: hectfern <hectfern@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 15:08:11 by coder             #+#    #+#             */
-/*   Updated: 2021/12/10 20:27:36 by hectfern         ###   ########.fr       */
+/*   Updated: 2021/12/14 18:34:17 by hectfern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ int key_hook(int keycode, t_var *var)
 	if(keycode == 113)
 	{
 		mlx_destroy_window(var->mlx, var->window);
+		mlx_destroy_display(var->mlx);
 	}
 	return (1);
 }
