@@ -18,7 +18,7 @@ char **map_generator(char *path)
 	temp = NULL;
 	map = ft_strdup("");
 
-	while (temp = get_next_line(fd))
+	while (!!(temp = get_next_line(fd)))
 	{
 		map = ft_strjoin(map, temp);
 		free(temp);
