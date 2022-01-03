@@ -8,6 +8,7 @@ char **map_generator(char *path)
 	int fd;
 	char *map;
 	char *temp;
+	char **map_array;
 
 	fd = open(path, O_RDONLY);
 	if (fd == -1)
@@ -24,7 +25,8 @@ char **map_generator(char *path)
 		free(temp);
 	}
 	close(fd);
-	return (ft_split(map, '\n'));
+	map_array = ft_split(map, '\n');
+	return (map_array);
 }
 
 int main(int argc, char **argv)
