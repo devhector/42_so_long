@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+#include "libft.h"
 
 static char	*get_line(char	*backup);
 static char	*remove_read_line(char *backup);
