@@ -6,7 +6,7 @@
 /*   By: hectfern <hectfern@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 16:31:30 by hectfern          #+#    #+#             */
-/*   Updated: 2022/01/11 23:34:35 by hectfern         ###   ########.fr       */
+/*   Updated: 2022/01/11 23:35:37 by hectfern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ int	wall_validator(t_game *game)
 	x = 0;
 	y = 0;
 	find_img_size(game);
+	is_rectangle(game);
 	rows = (game->map_num_rows / TILE_SIZE) - 1;
 	colums = (game->map_num_cols / TILE_SIZE) - 1;
 	while (game->map[0][y] == '1' && game->map[rows][y] == '1' && y <= colums)
