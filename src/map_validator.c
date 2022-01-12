@@ -6,11 +6,46 @@
 /*   By: hectfern <hectfern@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 16:31:30 by hectfern          #+#    #+#             */
-/*   Updated: 2022/01/12 20:07:35 by hectfern         ###   ########.fr       */
+/*   Updated: 2022/01/12 16:30:12 by hectfern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../lib/so_long.h"
+
+// int	is_rectangle(t_game *game)
+// {
+// 	int	rows;
+// 	int	cols;
+// 	int	x;
+// 	int	y;
+
+// 	y = 0;
+// 	rows = game->map_num_rows / TILE_SIZE;
+// 	cols = game->map_num_cols / TILE_SIZE;
+// 	while (game->map[x][y++] != '\0')
+// 	{
+// 		x = 0;
+// 		while (game->map[x++][y] != '\0')
+// 		{
+// 			if(x != rows)
+// 			{
+// 				printf("Error\nInvalid map\n");
+// 				return (0);
+// 			}
+// 			printf("%d\n", x);
+// 		}
+// 	}
+// 	x = 0;
+// 	while (game->map[x++][0] != '\0')
+// 	{
+// 		if (ft_strlen(game->map[x]) != cols)
+// 		{
+// 			printf("Error\nInvalid map\n");
+// 			return (0);
+// 		}
+// 	}
+// 	return (1);
+// }
 
 int	is_rectangle(t_game *game)
 {
@@ -22,29 +57,21 @@ int	is_rectangle(t_game *game)
 	y = 0;
 	rows = game->map_num_rows / TILE_SIZE;
 	cols = game->map_num_cols / TILE_SIZE;
-	while (game->map[x][y++] != '\0')
+
+	while (game->map[x][y] != '\0')
 	{
-		x = 0;
-		while (game->map[x++][y] != '\0')
+		printf("%d\n", x);
+		printf("%d\n", y);
+		printf("%c\n", game->map[x][y]);
+		if (game->map[x][y] == '\n')
 		{
-			if(x != rows)
-			{
-				printf("Error\nInvalid map\n");
-				return (0);
-			}
-			printf("%d\n", x);
+			y++;
+			x = 0;
 		}
+		else
+			x++;
 	}
-	x = 0;
-	while (game->map[x++][0] != '\0')
-	{
-		if (ft_strlen(game->map[x]) != cols)
-		{
-			printf("Error\nInvalid map\n");
-			return (0);
-		}
-	}
-	return (1);
+
 }
 
 int	wall_validator(t_game *game)
