@@ -6,7 +6,7 @@
 /*   By: hectfern <hectfern@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 16:31:30 by hectfern          #+#    #+#             */
-/*   Updated: 2022/01/12 20:45:10 by hectfern         ###   ########.fr       */
+/*   Updated: 2022/01/12 20:46:41 by hectfern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int	is_rectangle(t_game *game)
 			printf("Error\nMap should be rectangle\n");
 			return (0);
 		}
+		x++;
 	}
 	return (1);
 }
