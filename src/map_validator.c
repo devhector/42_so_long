@@ -6,7 +6,7 @@
 /*   By: hectfern <hectfern@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 16:31:30 by hectfern          #+#    #+#             */
-/*   Updated: 2022/01/12 16:33:31 by hectfern         ###   ########.fr       */
+/*   Updated: 2022/01/12 16:35:08 by hectfern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,9 +60,7 @@ int	is_rectangle(t_game *game)
 
 	while (game->map[x][y] != '\0')
 	{
-		printf("%d\n", x);
-		printf("%d\n", y);
-		printf("%c\n", game->map[x][y]);
+		printf("%d - %d - %c\n", x, y, game->map[x][y]);
 		if (game->map[x][y] == '\n')
 		{
 			y++;
