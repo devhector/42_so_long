@@ -6,7 +6,7 @@
 /*   By: hectfern <hectfern@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 16:31:30 by hectfern          #+#    #+#             */
-/*   Updated: 2022/01/12 20:52:39 by hectfern         ###   ########.fr       */
+/*   Updated: 2022/01/12 20:54:24 by hectfern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	is_rectangle(t_game *game)
 	colums = game->map_num_cols / TILE_SIZE;
 	while (x < (game->map_num_rows / TILE_SIZE))
 	{
-		temp = ft_strlen(game->map[x]);
+		temp = ft_strlen(game->map[x][0]);
 		if (temp != colums)
 		{
 			printf("Error\nMap should be rectangle\n");
