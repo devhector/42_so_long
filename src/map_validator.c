@@ -6,7 +6,7 @@
 /*   By: hectfern <hectfern@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 16:31:30 by hectfern          #+#    #+#             */
-/*   Updated: 2022/01/11 23:23:18 by hectfern         ###   ########.fr       */
+/*   Updated: 2022/01/11 23:31:08 by hectfern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,27 +22,24 @@ int	is_rectangle(t_game *game)
 	y = 0;
 	rows = game->map_num_rows / TILE_SIZE;
 	cols = game->map_num_cols / TILE_SIZE;
-	while(game->map[x][y])
+	while(game->map[x][y++])
 	{
 		x = 0;
-		while(game->map[x][y])
-			x++;
+		while(game->map[x++][y])
 		if(x != rows)
 		{
 			printf("Error\nInvalid map\n");
 			return (0);
 		}
-		y++;
 	}
 	x = 0;
-	while(game->map[x])
+	while(game->map[x++])
 	{
 		if (ft_strlen(game->map[x]) != cols)
 		{
 			printf("Error\nInvalid map\n");
 			return (0);
 		}
-		x++;
 	}
 	return (1);
 }
