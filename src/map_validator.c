@@ -6,7 +6,7 @@
 /*   By: hectfern <hectfern@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 16:31:30 by hectfern          #+#    #+#             */
-/*   Updated: 2022/01/12 20:49:22 by hectfern         ###   ########.fr       */
+/*   Updated: 2022/01/12 20:52:39 by hectfern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	is_rectangle(t_game *game)
 
 	x = 0;
 	colums = game->map_num_cols / TILE_SIZE;
-	while (x < game->map_num_rows / TILE_SIZE)
+	while (x < (game->map_num_rows / TILE_SIZE))
 	{
 		temp = ft_strlen(game->map[x]);
 		if (temp != colums)
@@ -70,8 +70,8 @@ int	map_validator(t_game *game)
 	collectibles = game->collectibles;
 	if (!wall_validator(game))
 		return (0);
-	if (!is_rectangle(game))
-		return (0);
+	// if (!is_rectangle(game))
+	// 	return (0);
 	if (start_position != 1 || end_position != 1 || collectibles < 1)
 	{
 		printf("Error\nMap must have exactly one player, ");
