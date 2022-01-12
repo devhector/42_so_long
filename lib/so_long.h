@@ -6,7 +6,7 @@
 /*   By: hectfern <hectfern@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 15:55:18 by hectfern          #+#    #+#             */
-/*   Updated: 2022/01/11 22:45:00 by hectfern         ###   ########.fr       */
+/*   Updated: 2022/01/12 21:51:53 by hectfern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ typedef struct s_game
 	int			end_position;
 	int			finish;
 	int			steps;
+	int			big_col;
 	t_player	player;
 }	t_game;
 

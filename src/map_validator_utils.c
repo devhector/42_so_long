@@ -6,7 +6,7 @@
 /*   By: hectfern <hectfern@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 16:52:42 by hectfern          #+#    #+#             */
-/*   Updated: 2022/01/08 18:14:54 by hectfern         ###   ########.fr       */
+/*   Updated: 2022/01/12 21:48:06 by hectfern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,22 @@ int	ext_validator(char *path)
 void	find_img_size(t_game *game)
 {
 	size_t	x;
+	int		temp;
 
 	x = 0;
 	while (game->map[x])
 		x++;
 	game->map_num_rows = x * TILE_SIZE;
 	game->map_num_cols = (ft_strlen(game->map[0])) * TILE_SIZE;
+	x = 0;
+	temp = 0;
+	while (game->map[x])
+	{
+		if(game->big_col < temp)
+			game->big_col = temp;
+		temp = ft_strlen(game->map[x]);
+		x++;
+	}
 }
 
 void	count_map_elements(t_game *game)
