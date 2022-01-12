@@ -6,7 +6,7 @@
 /*   By: hectfern <hectfern@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 16:31:30 by hectfern          #+#    #+#             */
-/*   Updated: 2022/01/12 20:12:58 by hectfern         ###   ########.fr       */
+/*   Updated: 2022/01/12 20:45:10 by hectfern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int	is_rectangle(t_game *game)
 			return (0);
 		}
 	}
+	return (1);
 }
 
 int	wall_validator(t_game *game)
