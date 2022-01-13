@@ -6,13 +6,13 @@
 /*   By: hectfern <hectfern@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 16:31:30 by hectfern          #+#    #+#             */
-/*   Updated: 2022/01/13 15:09:27 by hectfern         ###   ########.fr       */
+/*   Updated: 2022/01/13 15:21:52 by hectfern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../lib/so_long.h"
 
-int	is_rectangle(t_game *game)
+static int	is_rectangle(t_game *game)
 {
 	int	colums;
 	int	temp;
@@ -42,7 +42,6 @@ int	wall_validator(t_game *game)
 
 	x = 0;
 	y = 0;
-	find_img_size(game);
 	rows = (game->map_num_rows / TILE_SIZE) - 1;
 	colums = (game->map_num_cols / TILE_SIZE) - 1;
 	while (game->map[0][y] == '1' && game->map[rows][y] == '1' && y <= colums)
@@ -65,12 +64,13 @@ int	map_validator(t_game *game)
 
 	map_init(game);
 	count_map_elements(game);
+	find_img_size(game);
 	start_position = game->start_position;
 	end_position = game->end_position;
 	collectibles = game->collectibles;
-	if (!wall_validator(game))
-		return (0);
 	if (!is_rectangle(game))
+		return (0);
+	if (!wall_validator(game))
 		return (0);
 	if (start_position != 1 || end_position != 1 || collectibles < 1)
 	{
