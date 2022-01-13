@@ -6,7 +6,7 @@
 /*   By: hectfern <hectfern@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 16:31:30 by hectfern          #+#    #+#             */
-/*   Updated: 2022/01/12 20:54:24 by hectfern         ###   ########.fr       */
+/*   Updated: 2022/01/12 21:01:43 by hectfern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,8 +70,8 @@ int	map_validator(t_game *game)
 	collectibles = game->collectibles;
 	if (!wall_validator(game))
 		return (0);
-	// if (!is_rectangle(game))
-	// 	return (0);
+	if (!is_rectangle(game))
+		return (0);
 	if (start_position != 1 || end_position != 1 || collectibles < 1)
 	{
 		printf("Error\nMap must have exactly one player, ");
