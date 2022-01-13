@@ -6,11 +6,36 @@
 /*   By: hectfern <hectfern@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 16:31:30 by hectfern          #+#    #+#             */
-/*   Updated: 2022/01/13 15:26:11 by hectfern         ###   ########.fr       */
+/*   Updated: 2022/01/13 15:40:52 by hectfern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../lib/so_long.h"
+
+static int	char_validator(t_game *game)
+{
+	int	x;
+	int	y;
+
+	x = 0;
+	while (game->map[x])
+	{
+		y = 0;
+		while (game->map[x][y])
+		{
+			if (game->map[x][y] != COIN_CHAR && game->map[x][y] != EXIT_CHAR
+				&& game->map[x][y] != PLAYER_CHAR && game->map[x][y] != '0'
+				&& game->map[x][y] != '1')
+			{
+				printf("Error\nInvalid character found: %c\n", game->map[x][y]);
+				return (0);
+			}
+			y++;
+		}
+		x++;
+	}
+	return (1);
+}
 
 static int	is_rectangle(t_game *game)
 {
@@ -68,6 +93,8 @@ int	map_validator(t_game *game)
 	start_position = game->start_position;
 	end_position = game->end_position;
 	collectibles = game->collectibles;
+	if (!char_validator(game))
+		return (0);
 	if (!is_rectangle(game))
 		return (0);
 	if (!wall_validator(game))
