@@ -6,7 +6,7 @@
 /*   By: hectfern <hectfern@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 16:31:30 by hectfern          #+#    #+#             */
-/*   Updated: 2022/01/13 15:40:52 by hectfern         ###   ########.fr       */
+/*   Updated: 2022/01/14 16:08:25 by hectfern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,11 @@ static int	is_rectangle(t_game *game)
 		}
 		x++;
 	}
+	if (game->map[x])
+	{
+		printf("Error\nMap should be rectangle\n");
+		return (0);
+	}
 	return (1);
 }
 
@@ -93,9 +98,9 @@ int	map_validator(t_game *game)
 	start_position = game->start_position;
 	end_position = game->end_position;
 	collectibles = game->collectibles;
-	if (!char_validator(game))
-		return (0);
 	if (!is_rectangle(game))
+		return (0);
+	if (!char_validator(game))
 		return (0);
 	if (!wall_validator(game))
 		return (0);
