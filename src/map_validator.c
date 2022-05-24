@@ -6,7 +6,11 @@
 /*   By: hectfern <hectfern@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 16:31:30 by hectfern          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2022/01/14 16:08:25 by hectfern         ###   ########.fr       */
+=======
+/*   Updated: 2022/01/18 23:50:58 by hectfern         ###   ########.fr       */
+>>>>>>> master
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +31,11 @@ static int	char_validator(t_game *game)
 				&& game->map[x][y] != PLAYER_CHAR && game->map[x][y] != '0'
 				&& game->map[x][y] != '1')
 			{
+<<<<<<< HEAD
 				printf("Error\nInvalid character found: %c\n", game->map[x][y]);
+=======
+				printf("Error\nInvalid character found\n");
+>>>>>>> master
 				return (0);
 			}
 			y++;
